@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solly Pihuu 💖 Bahut Saara Sorry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #ffccd5 0%, #fff0f3 22%, #ffe5ec 48%, #ffd6e0 75%, #fff0f3 100%);
+      font-family: 'Poppins', sans-serif;
+      color: #4a1c2f;
+      overflow-x: hidden;
+      position: relative;
+      padding-bottom: 100px;
+    }
+
+    .hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .float-item {
+      position: absolute;
+      bottom: -35px;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% {
+        transform: translateY(-108vh) rotate(20deg) scale(1.25);
+        opacity: 0;
+      }
+    }
+
+    .top-marquee {
+      margin: 14px auto;
+      width: 94%;
+      max-width: 540px;
+      border: 2px solid #ff4d6d;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 8px 0;
+      box-shadow: 0 5px 18px rgba(255, 77, 109, 0.18);
+      position: relative;
+      z-index: 3;
+    }
+
+    .marquee-track {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scrollText 16s linear infinite;
+      font-family: 'Pacifico', cursive;
+      color: #c9184a;
+      font-size: 1.08rem;
+    }
+
+    @keyframes scrollText {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .wrapper {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 16px 16px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 20px 12px 26px;
+    }
+
+    .pill {
+      display: inline-block;
+      background: #fff;
+      color: #c9184a;
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 6px 15px;
+      border-radius: 999px;
+      border: 1px solid #ffb3c1;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(201, 24, 74, 0.1);
+    }
+
+    .hero h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.25rem;
+      line-height: 1.28;
+      color: #c9184a;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      line-height: 1.68;
+      color: #590d22;
+      font-weight: 500;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      padding: 22px 18px;
+      margin-bottom: 22px;
+      border: 1.5px solid #ffccd5;
+      box-shadow: 0 12px 28px rgba(201, 24, 74, 0.12);
+    }
+
+    .box-soft {
+      background: rgba(255, 245, 248, 0.96);
+      border: 1.5px dashed #ff758f;
+    }
+
+    .box h2 {
+      font-size: 1.16rem;
+      color: #c9184a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.74;
+      margin-bottom: 13px;
+      color: #3d1625;
+    }
+
+    .box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hl {
+      color: #c9184a;
+      font-weight: 600;
+    }
+
+    .sorry-wall {
+      background: linear-gradient(135deg, #fff0f3, #ffe5ec);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid #ffb3c1;
+      font-weight: 600;
+      color: #a4133c;
+      line-height: 1.9;
+      font-size: 0.94rem;
+      margin-top: 10px;
+    }
+
+    .prompt-box {
+      background: #fff;
+      border: 2px solid #ff4d6d;
+      border-radius: 22px;
+      padding: 20px 16px;
+      margin-bottom: 24px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(255, 77, 109, 0.14);
+    }
+
+    .prompt-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #c9184a;
+      margin-bottom: 14px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    button, .link-btn {
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.86rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-love {
+      background: linear-gradient(135deg, #ff4d6d, #c9184a);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(201, 24, 74, 0.28);
+    }
+
+    .btn-love:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-angry {
+      background: #ffe5ec;
+      color: #a4133c;
+      border: 1.5px solid #ff8fa3;
+      position: relative;
+    }
+
+    .btn-plead {
+      background: #fff;
+      color: #c9184a;
+      border: 1.5px solid #ff4d6d;
+    }
+
+    .status-msg {
+      margin-top: 14px;
+      font-weight: 600;
+      font-size: 0.94rem;
+      color: #b5174d;
+      min-height: 24px;
+      line-height: 1.58;
+    }
+
+    .scroll-spacer {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+      color: #9d174d;
+      opacity: 0.85;
+      letter-spacing: 0.4px;
+    }
+
+    .footer-note {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      color: #a4133c;
+      font-size: 0.96rem;
+      z-index: 4;
+      background: rgba(255, 240, 243, 0.9);
+      padding: 4px 0;
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <div class="top-marquee">
+    <div class="marquee-track">
+      Solly meri Pihuu ❤️ &nbsp;•&nbsp; Bahut Saara Sorry Cutiepie 🥺 &nbsp;•&nbsp; Maaf krdo Darling 💖 &nbsp;•&nbsp; Solly Solly Solly Pihuu 🌸 &nbsp;•&nbsp; Please smile krdo na ❤️
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <!-- HERO -->
+    <div class="hero" id="top">
+      <div class="pill">💌 Special Long Apology Page For Pihuu 💌</div>
+      <h1>💖 Pihuu, Bahut Saara Solly! 💖</h1>
+      <p>
+        Meri pyaari si <span class="hl">Darling Pihuu</span>, yeh poora page sirf tumhare liye banaya hai.
+        Neeche scroll karti jaana—har box mein dil ki baat, bahut saara <span class="hl">sorry / solly</span>, aur tumhare liye pyare buttons hain 🥺❤️
+      </p>
+      <div class="btn-row" style="margin-top:16px;">
+        <a href="#box1" class="btn-love">Aage Padho 👇</a>
+        <button class="btn-plead" onclick="showBoxMsg('topToast', 'Plz maaf krdo na Darling Pihuu! 🥺❤️ Bahut saara solly meri cutu dost!')">Plz Maaf Krdo 🥺</button>
+        <button class="btn-angry" onclick="showBoxMsg('topToast', 'Cutiepie Pihuu, ek cute si smile toh banti hai ab! 😊💖')">Smile Please 😊</button>
+      </div>
+      <div class="status-msg" id="topToast"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 1 / 7 ↓</div>
+
+    <!-- BOX 1 -->
+    <div class="box" id="box1">
+      <h2>🥺 Box 1: Sach Mein Dil Se Sorry</h2>
+      <p>
+        Hey <span class="hl">Cutiepie Pihuu</span>, sabse pehle toh dil se <span class="hl">sorry</span>.
+        Jab se mujhe ehsaas hua ki meri wajah se tumhara mood kharab hua ya tum udaas huin, tabse mujhe bilkul achha nahi lag raha.
+      </p>
+      <p>
+        Tum meri kitni pyaari aur special dost ho yeh main aksar shabdon mein poora nahi bol paata, par <span class="hl">cutu</span>, tumhari khushi mere liye bahut maayne rakhti hai.
+        <span class="hl">Solly na darling</span>, galti ho gayi mujhse—ab please itna gussa mat raho! 💖
+      </p>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msg1', 'Yayyy! Ek dil jeet liya tumne Darling Pihuu! 💖 Ab aise hi smile karti rehna 🌸')">Maaf Krdiya 💖</button>
+        <button class="btn-plead" onclick="showBoxMsg('msg1', 'Solly solly solly Cutiepie! 🥺❤️ Bas ek baar smile kar do!')">Aur Sorry Bolo 🥺</button>
+      </div>
+      <div class="status-msg" id="msg1"></div>
+    </div>
+
+    <!-- PROMPT 1 -->
+    <div class="prompt-box">
+      <div class="prompt-title">Maaf krdiya ? 🥺</div>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msgA', 'Sabse best! Thank you meri pyaari dost Pihuu! 💖✨')">Maaf Krdiya 💖</button>
+        <a href="#box2" class="btn-angry">Abhi bhi gussa hu &gt;&gt; plz maaf krdo</a>
+        <button class="btn-plead" onclick="showBoxMsg('msgA', 'Darling Pihuu, kaan pakad ke solly! 🥺💕')">Kaan Pakad Ke Solly</button>
+      </div>
+      <div class="status-msg" id="msgA"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 2 / 7 ↓</div>
+
+    <!-- BOX 2 -->
+    <div class="box box-soft" id="box2">
+      <h2>🌸 Box 2: Meri Cutu Dost Ko Ek Loving Note</h2>
+      <p>
+        <span class="hl">Darling Pihuu</span>, tumhari hasi aur tumhari baatein din ko kitna bright bana deti hain, shayad tumhe khud bhi poora andaza nahi hai.
+        Jab tum chup ho jaati ho ya naraz hoti ho, toh sab kuch ajeeb aur khali-khali sa lagta hai.
+      </p>
+      <p>
+        Mera dil bilkul nahi chahta ki meri kisi baat ya harkat se meri <span class="hl">cutiepie</span> ki aankhon mein thodi si bhi narazgi aaye.
+        <span class="hl">Bahut saara sorry</span>, <span class="hl">solly</span>, aur ek baar phir <span class="hl">solly</span>! 🥺💕
+      </p>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msg2', 'Meri cutu si Pihuu sabse achhi hai! 🌸💖')">Cutu Maan Gayi 🌸</button>
+        <button class="btn-plead" onclick="showBoxMsg('msg2', 'Chocolate treat pakki Cutiepie, bas gussa chhodo! 🍫❤️')">Chocolate Deal 🍫</button>
+      </div>
+      <div class="status-msg" id="msg2"></div>
+    </div>
+
+    <!-- PROMPT 2 -->
+    <div class="prompt-box">
+      <div class="prompt-title">Abhi bhi gussa hu &gt;&gt; plz maaf krdo?</div>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msgB', 'Solly solly solly Cutiepie! 🥺❤️ Ek nahi, sau baar sorry bolne ko taiyaar hoon bas maan jao!')">Plz Maaf Krdo 🥺</button>
+        <button class="btn-plead" onclick="showBoxMsg('msgB', 'Darling Pihuu, ek cute si smile toh banti hai ab! 😊💖')">Ek Smile De Do 😊</button>
+        <button class="btn-angry" onmouseover="dodgeBtn(this)" onclick="dodgeBtn(this)">Nahi Maanungi 😤</button>
+      </div>
+      <div class="status-msg" id="msgB"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 3 / 7 ↓</div>
+
+    <!-- BOX 3 -->
+    <div class="box" id="box3">
+      <h2>💖 Box 3: Kaan Pakad Ke Solly</h2>
+      <p>
+        Sach mein <span class="hl">Pihuu</span>, main apni galti ko bilkul chhupa nahi raha. Agar mujhse chook hui hai toh main poori tarah maan raha hoon.
+        Kaan pakad ke bol raha hoon—<span class="hl">solly meri cutu</span>, <span class="hl">solly meri darling</span>, <span class="hl">solly meri cutiepie</span>!
+      </p>
+      <p>
+        Dosti mein chhoti-moti galtiyan ho jaati hain, par usse bhi bada hota hai ek-dusre ko samajhna aur maaf karna.
+        Plz apni gussa wali meter kam kar do aur apni pyaari si <span class="hl">Pihuu</span> style mein baat kar lo na! 🥺❤️
+      </p>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msg3', 'Gussa meter 0% ho gaya! 🎉💖 Thank you Darling Pihuu!')">Gussa Khatam 🎉</button>
+        <a href="#box4" class="btn-plead">Next Box Dekho 👇</a>
+      </div>
+      <div class="status-msg" id="msg3"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 4 / 7 ↓</div>
+
+    <!-- BOX 4 -->
+    <div class="box box-soft" id="box4">
+      <h2>🍫 Box 4: Peace Treaty &amp; Promise</h2>
+      <p>
+        <span class="hl">Darling</span>, aage se main aur zyada dhyan rakhunga ki meri kisi bhi baat se tumhe bura na lage.
+        Tumhara respect, tumhari feelings, aur tumhari khushi hamesha priority pe rahegi.
+      </p>
+      <p>
+        Ab <span class="hl">sorry</span> accept kar lo na <span class="hl">cutiepie</span>! Dil se <span class="hl">solly</span> bol raha hoon—ab gussa chhodo aur ek badi si smile ke saath bol do ki sab okay hai! 🌸💖
+      </p>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msg4', 'Peace treaty sign ho gayi! 🤝💖 Ab dosti full power pe!')">Sab Okay Hai 💖</button>
+        <button class="btn-plead" onclick="showBoxMsg('msg4', 'Dil se solly Cutiepie! 🥺❤️ Ek baar aur sorry!')">Dil Se Solly 🥺</button>
+      </div>
+      <div class="status-msg" id="msg4"></div>
+    </div>
+
+    <!-- PROMPT 3 -->
+    <div class="prompt-box">
+      <div class="prompt-title">Maaf krdiya ya abhi bhi soch rahi ho?</div>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msgC', 'Best feeling ever! 💖 Thank you meri pyaari dost Pihuu! ❤️')">Haan, Maaf Krdiya 💖</button>
+        <button class="btn-plead" onclick="showBoxMsg('msgC', 'Soch lo, soch lo—par answer dil se YES hi aayega darling! 😉💕')">Thoda Aur Sochungi 🤔</button>
+        <a href="#box5" class="btn-angry">Abhi bhi gussa hu &gt;&gt; plz maaf krdo</a>
+      </div>
+      <div class="status-msg" id="msgC"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 5 / 7 ↓</div>
+
+    <!-- BOX 5: SORRY WALL -->
+    <div class="box" id="box5">
+      <h2>🥺 Box 5: Bahut Saara Sorry / Solly Wall</h2>
+      <p>
+        Jab tak tum smile na karo, yeh <span class="hl">sorry</span> aur <span class="hl">solly</span> kam padenge <span class="hl">cutu Pihuu</span>:
+      </p>
+      <div class="sorry-wall">
+        Sorry Pihuu ❤️ Solly Pihuu 🥺 Sorry Cutiepie 💖 Solly Darling 🌸<br>
+        Sorry Sorry Sorry 🥺 Solly Solly Solly 💖<br>
+        Bahut Saara Sorry Meri Pyaari Dost ❤️ Bahut Saara Solly Cutu 🌸<br>
+        Plz Maaf Krdo Darling Pihuu 🥺 Plz Maaf Krdo Cutiepie 💖<br>
+        Sorry again ❤️ Solly again 🥺 Sorry again 💖 Solly again 🌸<br>
+        Dil Se Sorry Pihuu ❤️ Dil Se Solly Cutiepie 💖<br>
+        Sorry Pihuu 🥺 Solly Pihuu 💖 Sorry Cutu 🌸 Solly Darling ❤️
+      </div>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msg5', 'Itne saare sorry pe toh ek smile banti hai Darling Pihuu! 🥰💖')">Bas Itna Kaafi Hai 😄</button>
+        <button class="btn-plead" onclick="showBoxMsg('msg5', 'Sorry sorry sorry sorry sorry! Solly solly solly solly! 🥺❤️')">Aur Likho Sorry 🥺</button>
+      </div>
+      <div class="status-msg" id="msg5"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 6 / 7 ↓</div>
+
+    <!-- BOX 6 -->
+    <div class="box box-soft" id="box6">
+      <h2>🌷 Box 6: Tumhari Khushi Sabse Zaroori</h2>
+      <p>
+        <span class="hl">Cutiepie Pihuu</span>, sach bataun toh jab tum udaas hoti ho na toh din ka har kaam bhaari lagne lagta hai.
+        Tumhari ek chhoti si muskurahat saari narazgi mita deti hai.
+      </p>
+      <p>
+        <span class="hl">Darling</span>, main jaanta hoon kabhi-kabhi main kuch galat bol ya kar deta hoon, par dil mein tumhare liye hamesha sirf achaai aur pyaar bhara dosti ka jazba rehta hai.
+        <span class="hl">Solly na cutu</span>, maaf kar do please! 💖🥺
+      </p>
+      <div class="btn-row">
+        <button class="btn-love" onclick="showBoxMsg('msg6', 'Meri cutu dost ne dil rakh liya! ❤️🌸')">Maan Gayi Pihuu ❤️🌸</button>
+        <a href="#box7" class="btn-plead">Aakhiri Box Dekho 👇</a>
+      </div>
+      <div class="status-msg" id="msg6"></div>
+    </div>
+
+    <div class="scroll-spacer">↓ Scroll 7 / 7 ↓</div>
+
+    <!-- BOX 7: FINAL -->
+    <div class="box" id="box7">
+      <h2>✨ Box 7: Aakhiri Dil Se Baat</h2>
+      <p>
+        Yahan tak scroll karke aayi ho iska matlab tumne mera poora <span class="hl">sorry</span> padh liya—aur yahi mere liye sabse badi baat hai <span class="hl">darling Pihuu</span>.
+      </p>
+      <p>
+        Tum ho toh baatein hain, hasi hai, aur masti hai. <span class="hl">Solly na cutiepie</span>, ab gussa khatam karo aur hamesha ki tarah apni pyaari si vibe wapas le aao! ❤️🥰
+      </p>
+
+      <div class="btn-row" style="margin-top:16px;">
+        <button class="btn-love" onclick="finalForgive()">Final: Maaf Krdiya Pihuu Ne 💖</button>
+        <button class="btn-plead" onclick="moreSorryRain()">Aur Sorry Chahiye? 🥺</button>
+        <a href="#top" class="btn-angry">Upar Wapas Chalo ↑</a>
+      </div>
+      <div class="status-msg" id="finalMsg"></div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">Meri Darling Cutiepie Pihuu ❤️ ke liye bahut saare solly ke saath</div>
+
+  <script>
+    const heartsBg = document.getElementById('heartsBg');
+    const emojis = ['❤️', '💖', '💕', '🥺', '🌸', '✨', '💗'];
+
+    for (let i = 0; i < 30; i++) {
+      const el = document.createElement('div');
+      el.className = 'float-item';
+      el.textContent = emojis[i % emojis.length];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.fontSize = (15 + Math.random() * 16) + 'px';
+      el.style.animationDuration = (6 + Math.random() * 7) + 's';
+      el.style.animationDelay = (Math.random() * 6) + 's';
+      heartsBg.appendChild(el);
+    }
+
+    function showBoxMsg(id, text) {
+      document.getElementById(id).textContent = text;
+    }
+
+    function dodgeBtn(btn) {
+      const x = (Math.random() - 0.5) * 90;
+      const y = (Math.random() - 0.5) * 35;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+      document.getElementById('msgB').textContent =
+        "Arey button bhi bhaag gaya! 😂 Ab toh maan jao Cutiepie, solly na! 🥺💖";
+    }
+
+    function finalForgive() {
+      document.getElementById('finalMsg').innerHTML =
+        "🎉 Sabse best din! Thank you meri Darling Cutiepie Pihuu! ❤️💖 Ab koi gussa nahi, sirf smile! 🌸";
+    }
+
+    function moreSorryRain() {
+      document.getElementById('finalMsg').innerHTML =
+        "🥺💖 Sorry sorry sorry sorry sorry! Solly solly solly solly solly! Plz maaf krdo meri pyaari Pihuu! ❤️";
+    }
+  </script>
+</body>
+  </html>
+  
